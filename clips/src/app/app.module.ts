@@ -16,6 +16,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import { ClipsListComponent } from './clips-list/clips-list.component';
 import { FbTimestampPipe } from './pipes/fb-timestamp.pipe';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TabComponent } from './tab.component';
+import {By} from "@angular/platform-browser";
 
 describe('TabComponent', () => {
   let component: TabComponent;
@@ -18,6 +19,24 @@ describe('TabComponent', () => {
   });
 
   it('should create', () => {
+    // @ts-ignore
     expect(component).toBeTruthy();
   });
+
+  it('should have .hidden class', () => {
+    const element = fixture.debugElement.query(By.css(".hidden"));
+    // @ts-ignore
+    expect(element).toBeTruthy();
+  });
+
+  it('should not have .hidden class', () => {
+    component.active = true
+    fixture.detectChanges();
+
+    const element = fixture.debugElement.query(By.css(".hidden"));
+    // @ts-ignore
+    expect(element).toBeFalsy();
+    // expect(element).not.toBeTruthy();
+  });
+
 });
